@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('items');
             $table->decimal('cash',10,2);
             $table->decimal('change',10,2);
-            $table->enum('status',['PAID','PENDINGS','CANCELLED']);
+            $table->enum('status',['PAID','PENDINGS','CANCELLED'])->default('PAID');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
